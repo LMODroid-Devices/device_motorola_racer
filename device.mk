@@ -37,13 +37,20 @@ PRODUCT_PACKAGES += \
     SettingsResRacer
 
 # Audio
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/audio/mixer_paths_madera_evt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_madera_evt.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    $(LOCAL_PATH)/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -70,6 +77,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/nfc/st21nfc_conf_ds.txt:$(TARGET_COPY_OUT_VENDOR)/etc/st21nfc_conf_ds.txt \
     $(LOCAL_PATH)/nfc/st21nfc_conf_ss.txt:$(TARGET_COPY_OUT_VENDOR)/etc/st21nfc_conf_ss.txt
+
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/tcs3708.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/tcs3708.json \
+    $(LOCAL_PATH)/configs/sensors/tcs3708_boe_always.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/tcs3708_boe_always.json \
+    $(LOCAL_PATH)/configs/sensors/tcs3708_boeB4_always.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/tcs3708_boeB4_always.json \
+    $(LOCAL_PATH)/configs/sensors/tcs3708_csot_always.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/tcs3708_csot_always.json \
+    $(LOCAL_PATH)/configs/sensors/tcs3708_csotB5_always.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/tcs3708_csotB5_always.json \
+    $(LOCAL_PATH)/configs/sensors/tcs3708_tianma_always.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/tcs3708_tianma_always.json
+
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

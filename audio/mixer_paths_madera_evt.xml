@@ -273,9 +273,6 @@
 	<ctl name="MultiMedia1 Mixer SLIM_7_TX" value="0" />
 
 	<!-- split a2dp -->
-	<ctl name="BT SampleRate" value="KHZ_8" />
-	<ctl name="BT SampleRate RX" value="KHZ_8" />
-	<ctl name="BT SampleRate TX" value="KHZ_8" />
 	<ctl name="AFE Input Channels" value="Zero" />
 	<ctl name="SLIM7_RX ADM Channels" value="Zero" />
 	<!-- split a2dp end-->
@@ -323,7 +320,6 @@
 	</path>
 
 	<path name="deep-buffer-playback bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="deep-buffer-playback bt-sco" />
 	</path>
 
@@ -389,7 +385,6 @@
 	</path>
 
 	<path name="low-latency-playback bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="low-latency-playback bt-sco" />
 	</path>
 
@@ -438,7 +433,6 @@
 	</path>
 
 	<path name="compress-offload-playback bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="compress-offload-playback bt-sco" />
 	</path>
 
@@ -479,7 +473,6 @@
 	</path>
 
 	<path name="audio-record bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="audio-record bt-sco" />
 	</path>
 
@@ -492,7 +485,6 @@
 	</path>
 
 	<path name="low-latency-record bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="low-latency-record bt-sco" />
 	</path>
 
@@ -532,6 +524,11 @@
 		<ctl name="VoiceMMode1_Tx Mixer SEN_MI2S_TX_MMode1" value="1" />
 	</path>
 
+    <path name="voicemmode1-call hearing-aid">
+        <ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="VoiceMMode1_Tx Mixer SEN_MI2S_TX_MMode1" value="1" />
+    </path>
+
 	<path name="voicemmode1-call speaker">
 		<path name="voicemmode1-call" />
 	</path>
@@ -542,7 +539,6 @@
 	</path>
 
 	<path name="voicemmode1-call bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="voicemmode1-call bt-sco" />
 	</path>
 
@@ -579,6 +575,11 @@
 		<ctl name="VoiceMMode2_Tx Mixer SEN_MI2S_TX_MMode2" value="1" />
 	</path>
 
+    <path name="voicemmode1-call hearing-aid">
+        <ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="VoiceMMode1_Tx Mixer SEN_MI2S_TX_MMode1" value="1" />
+    </path>
+
 	<path name="voicemmode2-call speaker">
 		<path name="voicemmode2-call" />
 	</path>
@@ -589,7 +590,6 @@
 	</path>
 
 	<path name="voicemmode2-call bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="voicemmode2-call bt-sco" />
 	</path>
 
@@ -662,29 +662,29 @@
 		<path name="incall-rec-uplink-and-downlink" />
 	</path>
 
-	<path name="incall-music-uplink">
+	<path name="incall_music_uplink">
 		<ctl name="Incall_Music Audio Mixer MultiMedia9" value="1" />
 		<ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="1" />
 	</path>
 
-	<path name="incall-music-uplink bt-sco">
-		<path name="incall-music-uplink" />
+	<path name="incall_music_uplink bt-sco">
+		<path name="incall_music_uplink" />
 	</path>
 
-	<path name="incall-music-uplink bt-sco-wb">
-		<path name="incall-music-uplink" />
+	<path name="incall_music_uplink bt-sco-wb">
+		<path name="incall_music_uplink" />
 	</path>
 
-	<path name="incall-music-uplink afe-proxy">
-		<path name="incall-music-uplink" />
+	<path name="incall_music_uplink afe-proxy">
+		<path name="incall_music_uplink" />
 	</path>
 
-	<path name="incall-music-uplink speaker-and-bt-sco">
-		<path name="incall-music-uplink" />
+	<path name="incall_music_uplink speaker-and-bt-sco">
+		<path name="incall_music_uplink" />
 	</path>
 
-	<path name="incall-music-uplink speaker-and-bt-sco-wb">
-		<path name="incall-music-uplink" />
+	<path name="incall_music_uplink speaker-and-bt-sco-wb">
+		<path name="incall_music_uplink" />
 	</path>
 
 	<path name="hfp-sco">
@@ -693,7 +693,6 @@
 	</path>
 
 	<path name="hfp-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="hfp-sco" />
 	</path>
 
@@ -965,7 +964,15 @@
 		<ctl name="IN2L Volume" value="12" />
 	</path>
 
+    <path name="hearing-aid-mic">
+        <path name="voice-speaker-mic"/>
+    </path>
+
 	<path name="voice-speaker-dmic-ef">
+		<path name="speaker-dmic-endfire" />
+	</path>
+
+	<path name="speaker-stereo-dmic-ef">
 		<path name="speaker-dmic-endfire" />
 	</path>
 
@@ -978,6 +985,10 @@
 	</path>
 
 	<path name="voice-rec-dmic-ef-fluence">
+		<path name="dmic-endfire" />
+	</path>
+
+	<path name="handset-stereo-dmic-ef">
 		<path name="dmic-endfire" />
 	</path>
 
